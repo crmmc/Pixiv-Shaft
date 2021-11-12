@@ -32,6 +32,25 @@ allprojects {
         mavenCentral()
         google()
     }
+    Android{
+
+    splits {
+
+        abi {
+
+                enable true
+
+                reset()
+
+                include 'x86', 'armeabi-v7a','x86_64'//这里想要什么架构的apk就加哪个
+
+                universalApk true
+
+            }
+
+        }
+
+ }
 }
 
 task clean(type: Delete) {
